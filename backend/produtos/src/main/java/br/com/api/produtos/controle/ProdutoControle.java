@@ -23,9 +23,10 @@ public class ProdutoControle {
     @Autowired
     private ProdutoServico ps;
 
+    @CrossOrigin(origins = "http://localhost:5173")
     @DeleteMapping("/remover/{id}")
     public ResponseEntity<RespostaModelo> remover(@PathVariable long id) {
-       return ps.remover(id);
+       return ps.remover(id);   
     }
 
     @PutMapping("/alterar")

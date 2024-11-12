@@ -1,6 +1,6 @@
 import React from "react";
 
-export default function Tabela() {
+export default function Tabela({ vetor, selecionar }) {
     return (
         <>
             <table className='table'>
@@ -14,12 +14,18 @@ export default function Tabela() {
                 </thead>
 
                 <tbody>
-                    <tr>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                    </tr>
+                    {
+                        vetor.map((obj, indice) => (
+                            <tr key={indice}>
+                                <td>{indice + 1}</td>
+                                <td>{obj.nome}</td>
+                                <td>{obj.marca}</td>
+                                <td>
+                                    <button className="btn btn-success" onClick={() => {selecionar(indice)}}>Selecionar</button>
+                                </td>
+                            </tr>
+                        ))
+                    }
                 </tbody>
             </table>
         </>
