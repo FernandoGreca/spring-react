@@ -55,7 +55,7 @@ function App() {
 
   // Remover produto
   const remover = () => {
-    fetch('http://localhost:8080//remover/'+objProduto.id,{
+    fetch('http://localhost:8080/remover/'+objProduto.id,{
       method:'delete',
       headers:{
         'Content-type':'application/json',
